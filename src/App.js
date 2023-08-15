@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
+import PropertyDetail from "./components/PropertyDetail"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <Navbar />
     <Routes>
       <Route index element = {<Home />} />
+      <Route path="/property/:id/:slug" element={ <PropertyDetail  />} />
       <Route path="/about" element ={<About />} />
       <Route path="/contact" element ={<Contact />} />
     </Routes>

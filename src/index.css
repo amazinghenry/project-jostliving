@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 * { 
+    margin: 0;
+    padding: 0;
 	box-sizing: border-box;
     font-family:'Roboto', sans-serif;
+    font-size: 14px;
 }
 html, body {
 	min-height: 100%;
@@ -80,7 +83,7 @@ input:required:after {
 }
 	/* sets up required form fields with the conventional following red asterix */
 input[type="email"]:invalid { 
-	background: #f00;
+	background: #fff;
 }
 	/* causes a visual alert in browsers that do client-side checking of HTML5 email field – this may already be the default in some browsers. */
 	
@@ -105,8 +108,7 @@ sub, sup {
 /*  */
 
 :root {
-
-    --accent-col : #CBA243;
+    --sec-color : #CBA243;
 }
 
 nav {
@@ -119,8 +121,11 @@ nav {
 }
 
 .main-logo {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-right: auto;
+    text-decoration: none;
+    color: var(--sec-color);
+    font-weight: 400;
 }
 
 .link-group {
@@ -132,6 +137,11 @@ nav {
     color: #373737;
     font-size: 1rem;
 }
+.link-item:hover {
+    color: var(--sec-color);
+    border-bottom: 1px solid var(--sec-color);
+    padding-bottom: 0;
+}
 
 header {
     background-image: url(https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg);
@@ -140,12 +150,13 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
 .header-title {
-    color: var(--accent-col);
+    color: var(--sec-color);
+    font-size: 2rem;
 }
 .header-text {
     color: #fff;
@@ -157,7 +168,7 @@ header {
 
 .section-title {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 30px;
 }
 
@@ -180,8 +191,10 @@ footer {
     }
 }
 .property-item {
+    text-decoration: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #fff;
     padding: 10px;
 }
 
@@ -190,34 +203,156 @@ footer {
     border-radius: 5px;
 }
 
-.property-type {
-    font-size: 1rem;
-    color: rgb(194, 168, 74);
-}
-
-.property-title,
+.property-type,
 .property-price,
 .property-location,
 .property-bath,
 .property-toilet,
 .property-bed {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #595959;
 }
 
 .property-price {
-    color: ;
+    color: var(--sec-color);
+    font-weight: 500;
 }
 
 .property-icon-group {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #373737;
+    border-top: 1px solid #d7d7d7;
     padding: 5px 0;
     margin-top: 5px;
 }
 
 .property-icon {
     margin-right: 3px;
+}
+
+/* property-details */
+.property-detail {
+    background-color: #e6e6e6;
+    padding: 20px 0;
+}
+.property-detail-content {
+    padding: 20px;
+    grid-area: content;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.property-detail-location {
+    padding: 0;
+}
+
+.property-detail-sidebar {
+    grid-area: sidebar;
+    background-color:#fff;
+}
+
+.property-detail-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    grid-template-areas:
+    "content content sidebar";
+}
+
+/* on mobile */
+@media screen and (max-width: 500px) {
+    .property-detail-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "content "
+    "sidebar " ;
+}
+}
+
+.property-detail-header-group {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.property-detail-type {
+    font-size: 1.3rem;
+    color: var(--sec-color);
+}
+
+.peoperty-detail-price {
+    font-size: 1.3rem;
+    color: var(--sec-color);
+}
+
+.property-detail-sidebar {
+    padding: 20px;
+}
+
+.property-detail-sidebar-title {
+    color: var(--sec-color);
+    font-size: 1.2rem;
+    text-align: center ;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width:500px) {
+    .property-detail-image {
+        max-width: 100%;
+    }
+}
+
+
+.prop-detail-group {
+   border-top: 1px solid #d7d7d7;
+   padding-top: 10px;
+}
+
+.prop-detail-title {
+    font-size: 1.2rem;
+    color: var(--sec-color);
+}
+
+.prop-detail-text {
+    font-size: 1.0rem;
+}
+
+.form-control {
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: var(--sec-color);
+    font-weight: 600;
+    border: none;
+}
+
+/* feature group */
+@media screen and (min-width: 500px) {
+    .feature-group {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 0 0 20px 0;
+    }
+}
+.feature-group {
+    padding: 0 0 20px 0;
+}
+
+.feature-item {
+    list-style-type: none;
+}
+
+.about-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.contact-section {
+    padding: 40px 0;
+    text-align: center;
 }

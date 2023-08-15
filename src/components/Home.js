@@ -4,8 +4,6 @@ import PropertyCard from "./PropertyCard";
 
 const Home = () => {
     
-
-
     return ( 
         <div className="home-wrapper" >
             <Header />
@@ -15,7 +13,7 @@ const Home = () => {
                { propertyData.map((property)=>(
                 <PropertyCard 
                 id = {property.id}
-                imageUrl1 = {property.imageUrl1}
+                images = {property.imageUrl}
                 type = {property.type}
                 title = {property.title}
                 price = {property.price}
@@ -23,6 +21,8 @@ const Home = () => {
                 bed = {property.bed}
                 bath = {property.bath}
                 toilet = {property.toilet}
+                description = {property.description}
+                
                 />
                 ))}
                 </div>

@@ -4,7 +4,7 @@ const Navbar = () => {
     return ( 
         <nav className="container-fluid">
             <div className="nav-bar-group container">
-            <h1 className="main-logo">JostLiving</h1>
+            <Link to="/" className="main-logo">JostLiving</Link>
             <div className="link-group">
                 <Link to="/" className="link-item">Home</Link>
                 <Link to="/about" className="link-item">About</Link>

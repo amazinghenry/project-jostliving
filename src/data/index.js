@@ -9,12 +9,17 @@ const data = [
         bath : 1,
         toilet : 1,
         isAvailable : true,
-        imageUrl1: "image-1.jpg",
-        imageUrl2: "image-2.jpg",
-        imageUrl3: "image-3.jpg",
-        imageUrl4: "image-4.jpg",
-        imageUrl5: "image-5.jpg",
-        imageUrl6: "image-6.jpg",
+        imageUrl: [
+            {
+                imageUrl1: "image-1.jpg",
+                imageUrl2: "image-2.jpg",
+                imageUrl3: "image-3.jpg",
+                imageUrl4: "image-4.jpg",
+                imageUrl5: "image-5.jpg",
+                imageUrl6: "image-6.jpg",
+            }
+        ],
+        description : "",
     },
     {
         id : 2,
@@ -26,12 +31,13 @@ const data = [
         bath : 1,
         toilet : 1,
         isAvailable : true,
-        imageUrl1: "image2-1.jpg",
-        imageUrl2: "image2-2.jpg",
-        imageUrl3: "image2-3.jpg",
-        imageUrl4: "image2-4.jpg",
-        imageUrl5: "image2-5.jpg",
-        imageUrl6: "image2-6.jpg",
+        imageUrl: [
+            {
+                imageUrl1: "image2-1.jpg",
+                imageUrl2: "image2-2.jpg",
+            }
+        ],
+        description : "",
     },
 ]
 export default data

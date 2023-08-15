@@ -1,32 +1,34 @@
 import bathIcon from '../assets/bath-icon.png'
 import bedIcon from '../assets/bed-icon.png'
 import toiletIcon from '../assets/toilet-icon.png'
+import { Link } from 'react-router-dom';
+import { generateSlug } from '../utils';
 
-const PropertyCard = (props) => {
+const PropertyCard = ({ id, images, type, title, price, location, bed, bath, toilet, description }) => {
+    const num = 1
     return ( 
-        <div className="property-item" key={props.id}>
-            <img src={`./images/${props.imageUrl1}`} alt="" className="property-image" />
+        <Link to = {`/property/${id}/${generateSlug(title)}`} className="property-item" key={id}>
+            <img src={`/images/${images[0].imageUrl1}`} alt="" className="property-image img-fluid" />
             <div className="property-content">
-                <div className="property-type">{props.type}</div>
-                <div className="property-location">{props.location}</div>
-                <div className="property-price">&#8358;{props.price}</div>
-                {/* <div className="property-title">{props.title}</div> */}
+                <div className="property-type">{type}</div>
+                <div className="property-location">{location}</div>
+                <div className="property-price">&#8358;{price}</div>
                 <div className="property-icon-group">
                     <div className="property-bed">
                     <img src={bedIcon} alt="" className='property-icon' /> 
-                    - {props.bed} 
+                    - {bed} {(bed > num) ? "beds" : "bed" }
                     </div>
                     <div className="property-bath">
                     <img src={bathIcon} alt="" className='property-icon' />
-                    - {props.bath}
+                    - {bath} {(bath > num) ? "baths" : "bath" }
                     </div>
                     <div className="property-toilet">
                     <img src={toiletIcon} alt="" className='property-icon' /> 
-                    - {props.toilet}
+                    - {toilet} {(toilet > num) ? "toilets" : "toilet" }
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
      );
 }
  
