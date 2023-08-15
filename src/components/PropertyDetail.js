@@ -38,7 +38,7 @@ const PropertyDetail = () => {
                         </div>
 
                         <div className='peoperty-detail-price'>
-                        &#8358;{property.price} / Day
+                        &#8358;{property.price}/Day
                         </div>
                     </div>
 
@@ -81,7 +81,7 @@ const PropertyDetail = () => {
                 {/* property-description */}
                 <div className='prop-detail-group'>
                     <h3 className='prop-detail-title'> Description</h3>
-                    <p className='prop-detail-text'> Lorem Ipsum</p>
+                    <p className='prop-detail-text'> {property.description} </p>
                 </div>
                 </div>
 
@@ -93,8 +93,16 @@ const PropertyDetail = () => {
                         <input type='text' value = {property.title} disabled className='form-control' />
                         <input type='email' name='email' placeholder='Email' className='form-control'  required/>
                         <input type='tel' name='phone' placeholder='Phone' className='form-control'  required/>
-                        <input type='date' name='arrival' placeholder='Arrive by' className='form-control'  required/>
-                        <input type='date' name='depart' placeholder='Depart by' className='form-control'  required/>
+                        <div className='check-form-group'>
+                            <div className='checkin-form'>
+                            <label for = 'checkin'>Check in</label>
+                            <input type='text' id='checkin' name='checkin'  className='form-control' required/>
+                            </div>
+                            <div className='checkout-form'>
+                            <label for = 'checkout'>Check out</label>
+                            <input type='text' id='checkout' name='checkout' className='form-control' required/>
+                            </div>
+                        </div>
                         <input type='number' name='adultNum' placeholder='Adult' className='form-control'  required/>
                         <input type='number' name='childNum' placeholder='Children' className='form-control'  required/>
                         <input type='submit' value="Reserve"  className='form-control'/>

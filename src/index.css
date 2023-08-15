@@ -324,11 +324,18 @@ footer {
     margin-bottom: 10px;
 }
 
+.check-form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
 input[type="submit"] {
     background-color: var(--sec-color);
     font-weight: 600;
     border: none;
 }
+
 
 /* feature group */
 @media screen and (min-width: 500px) {

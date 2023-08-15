@@ -22,7 +22,6 @@ const Home = () => {
                 bath = {property.bath}
                 toilet = {property.toilet}
                 description = {property.description}
-                
                 />
                 ))}
                 </div>
