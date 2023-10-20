@@ -336,6 +336,30 @@ input[type="submit"] {
     border: none;
 }
 
+.success-message {
+    background-color: rgb(0, 160, 104);
+    margin-top: 20px;
+    border-radius: 6px;
+    padding: 10px;
+    color: #fff;
+    width:max-content;
+    text-align: center;
+    font-size: 0.8rem;
+    }
+  
+  .error-message {
+    background-color: crimson;
+    padding: 10px;
+    color: #fff;
+    width:max-content;
+    }
+  
+  #form-response {
+    text-align: center;
+    display: block;
+    margin: 10px auto;    
+    }
+  
 
 /* feature group */
 @media screen and (min-width: 500px) {

@@ -4,6 +4,7 @@ import { generateSlug } from '../utils.js';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import ReservationForm from './ReservationForm.js';
 
 const PropertyDetail = () => {
 
@@ -65,7 +66,7 @@ const PropertyDetail = () => {
                 {/* property-title */}
                 <div className='prop-detail-group'>
                     <h3 className="prop-detail-title">Property title</h3>
-                    <p className='prop-detail-text'> Miji Residences and Villas</p>
+                    <p className='prop-detail-text'> {property.title}</p>
                 </div>
 
                 {/* property-featured */}
@@ -87,27 +88,8 @@ const PropertyDetail = () => {
 
                 <aside className='property-detail-sidebar'>
                     <h2 className='property-detail-sidebar-title'>Reserve this apartment</h2>
-                    <form className='form-group'>
-                        <input type='text' name='firstname' placeholder='First name' className='form-control'  required/>
-                        <input type='text' name='lastname' placeholder='Last name' className='form-control'  required/>
-                        <input type='text' value = {property.title} disabled className='form-control' />
-                        <input type='email' name='email' placeholder='Email' className='form-control'  required/>
-                        <input type='tel' name='phone' placeholder='Phone' className='form-control'  required/>
-                        <div className='check-form-group'>
-                            <div className='checkin-form'>
-                            <label for = 'checkin'>Check in</label>
-                            <input type='text' id='checkin' name='checkin'  className='form-control' required/>
-                            </div>
-                            <div className='checkout-form'>
-                            <label for = 'checkout'>Check out</label>
-                            <input type='text' id='checkout' name='checkout' className='form-control' required/>
-                            </div>
-                        </div>
-                        <input type='number' name='adultNum' placeholder='Adult' className='form-control'  required/>
-                        <input type='number' name='childNum' placeholder='Children' className='form-control'  required/>
-                        <input type='submit' value="Reserve"  className='form-control'/>
-                    </form>
-                </aside>
+                    <ReservationForm property={property} />
+                </aside> 
 
             </div>
         </section>
